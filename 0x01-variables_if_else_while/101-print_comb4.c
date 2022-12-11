@@ -1,41 +1,33 @@
 #include <stdio.h>
 
 /**
- * main - program that prints all possible different combination
- * Return: Always 0
+ * main - a simple program that outputs 0-9 separated by commas
+ *
+ * Return: 0 on success
  */
-
 int main(void)
 {
 	int i;
-	int n;
 	int j;
+	int k;
 
-	for (i = 46; i < 58; i++)
+	for (i = 48; i < 56; i++)
 	{
-		for (n = 48; n < 58; n++)
+		for (j = i + 1; j < 57; j++)
 		{
-			if (n > i)
+			for (k = j + 1; k < 58; k++)
 			{
-				for (j = 48; j < 58; j++)
+				putchar(i);
+				putchar(j);
+				putchar(k);
+				if (i != 55 || j != 56 || k != 57)
 				{
-					if (j > n)
-					{
-						putchar(i);
-						putchar(n);
-						putchar(j);
-						if (i == 55 && n == 56 && j == 57)
-						{
-							break;
-						}
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }
